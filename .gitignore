@@ -3,3 +3,4 @@ tmp/
 yarn-error.log
 package-lock.json
 .coveralls.yml
+coverage/
