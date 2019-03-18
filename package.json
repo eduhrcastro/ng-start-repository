@@ -4,8 +4,11 @@
   "description": "Boilerplate code to start a new repository angularjs",
   "main": "src/app.js",
   "scripts": {
-    "start": "gulp build",
-    "test": "gulp test"
+    "start": "gulp",
+    "test": "gulp test",
+    "lint": "gulp eslint",
+    "htmlhint": "gulp htmlhint",
+    "sasslint": "gulp sassLint"
   },
   "repository": {
     "type": "git",
@@ -45,15 +48,18 @@
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^3.1.0",
     "gulp-concat-vendor": "^0.0.4",
+    "gulp-eslint": "^5.0.0",
+    "gulp-htmlhint": "^2.2.1",
     "gulp-ng-constant": "^1.2.0",
     "gulp-npm-dist": "^1.0.2",
     "gulp-rename": "^1.2.3",
     "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^4.0.1",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-series": "^1.0.2",
+    "gulp-umd": "^2.0.0",
     "gulp-watch": "^5.0.0",
     "gulp-yarn": "^2.0.0",
-    "gulp-umd": "^2.0.0",
     "htmlhint": "^0.11.0",
     "jasmine-core": "^3.3.0",
     "jasmine-expect": "^4.0.1",

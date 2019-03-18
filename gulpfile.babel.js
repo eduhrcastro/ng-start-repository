@@ -13,6 +13,10 @@ import umd from 'gulp-umd'
 import patterns from 'umd-templates'
 import karma from 'karma'
 
+import eslint from 'gulp-eslint'
+import sassLint from 'gulp-sass-lint'
+import htmlhint from 'gulp-htmlhint'
+
 import path from 'path'
 
 const karmaServer = karma.Server
@@ -49,13 +53,13 @@ gulp.task('clean', () => {
     .pipe(clean({ force: true }))
 })
 
-gulp.task('umd', function () {
+gulp.task('umd', () => {
   return gulp.src('tmp/*.js')
     .pipe(babel({
       presets: ['es2015']
     }))
     .pipe(umd({
-      dependencies: function (file) {
+      dependencies: (file) => {
         return [
           {
             name: 'angular',
@@ -66,7 +70,10 @@ gulp.task('umd', function () {
           }
         ]
       },
-      namespace: function (file) {
+      namespace: (file) => {
+        return projectName
+      },
+      exports: (file) => {
         return projectName
       },
       template: patterns.commonjsStrict.path
@@ -76,10 +83,10 @@ gulp.task('umd', function () {
 
 gulp.task('watch', () => {
   gulp.watch('gulpfile.babel.js', () => {
-    runSequence('yarn', 'concat', 'umd')
+    runSequence('yarn', 'concat', 'umd', 'minify')
   })
   gulp.watch(['src/*.js'], () => {
-    runSequence('yarn', 'concat', 'umd')
+    runSequence('yarn', 'concat', 'umd', 'minify')
   })
 })
 
@@ -90,14 +97,29 @@ gulp.task('test', (done) => {
   }, () => { done() })
 })
 
-gulp.task('dev', () => {
-  runSequence('yarn', 'concat', 'umd', 'minify', 'watch')
+gulp.task('eslint', (done) => {
+  return gulp.src(['src/**/*.js', 'gulpfile.babel.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+})
+
+gulp.task('sassLint', (done) => {
+  return gulp.src(['src/**/*.scss'])
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+})
+
+gulp.task('htmlhint', (done) => {
+  return gulp.src(['src/**/*.html'])
+    .pipe(htmlhint())
 })
 
 gulp.task('build', () => {
-  runSequence('yarn', 'concat', 'umd', 'minify', 'clean')
+  runSequence('yarn', 'concat', 'umd', 'minify', 'clean', 'sassLint', 'htmlhint', 'eslint', 'test')
 })
 
 gulp.task('default', () => {
-  runSequence('yarn', 'concat', 'umd', 'minify', 'clean', 'watch')
+  runSequence('yarn', 'concat', 'umd', 'minify', 'watch')
 })

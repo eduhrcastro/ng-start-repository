@@ -17,5 +17,5 @@ angular.module('boilerplate', []).factory('sample', [function () {
   };
 }]);
 
-exports.boilerplate = Boilerplate;
+exports.boilerplate = boilerplate;
 }));

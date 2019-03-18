@@ -23,7 +23,7 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'dist/ngIpStack.js',
+      'dist/boilerplate.js',
       'specs/*.spec.js'
     ],
 
@@ -35,7 +35,7 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'specs/*.spec.js': 'babel',
-      'dist/ngIpStack.js': ['coverage']
+      'dist/boilerplate.js': ['coverage']
     },
 
     babelPreprocessor: {
