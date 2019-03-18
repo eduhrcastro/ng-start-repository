@@ -47,7 +47,7 @@
   },
   "overrides": [
     {
-      "files": ["dist/**/*.js"],
+      "files": ["dist/**/*.js", "specs/**/*.js"],
       "rules": {
         "angular/avoid-scope-typos": 0,
         "angular/module-getter": 0,
@@ -93,7 +93,9 @@
     "io": "readonly",
     "XLSX": "readonly",
     "FileReader": "readonly",
-    "StringMask": "readonly"
+    "StringMask": "readonly",
+    "inject": "readonly",
+    "expect": "readonly"
   },
   "env": {
     "mocha": true
