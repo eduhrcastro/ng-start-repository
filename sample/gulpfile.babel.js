@@ -14,6 +14,8 @@ import vendor from 'gulp-concat-vendor'
 import concatCss from 'gulp-concat-css'
 import cleanCSS from 'gulp-clean-css'
 
+import connect from 'gulp-connect'
+
 gulp.task('vendorsJs', () => {
   return gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
@@ -106,6 +108,12 @@ gulp.task('watch', () => {
   gulp.watch('public/app/assets/sass/*.scss', ['sass'])
 })
 
+gulp.task('connect', () => {
+  connect.server({
+    root: 'public'
+  })
+})
+
 gulp.task('default', () => {
-  runSequence(['vendorsJs', 'vendorsCss'], ['sass', 'htmlToJs'], 'concat', 'minify', 'clean', 'watch')
+  runSequence(['vendorsJs', 'vendorsCss'], ['sass', 'htmlToJs'], 'concat', 'minify', 'clean', 'connect', 'watch')
 })

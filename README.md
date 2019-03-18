@@ -9,17 +9,31 @@
 
 ## Build
 
-```
+```sh
 $ yarn install
 $ gulp build
 ```
 
 ## Tests
 
-- Unit:
- - Uses [Karma](http://karma-runner.github.io) + [Jasmine](http://jasmine.github.io/)
- - Files: `specs/*.spec.js`
+- Uses [Karma](http://karma-runner.github.io) + [Jasmine](http://jasmine.github.io/)
+- Files: `specs/*.spec.js`
 
-```
+```sh
 $ gulp test
+```
+
+## Run Sample
+
+- Enter the sample folder and execute the commands below
+
+```sh
+$ yarn install
+$ gulp
+```
+
+- View in your Browser
+
+```sh
+http://localhost:8080/#/
 ```

@@ -32,6 +32,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^3.1.0",
     "gulp-concat-vendor": "^0.0.4",
+    "gulp-connect": "^5.7.0",
     "gulp-rename": "^1.2.3",
     "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^4.0.1",
