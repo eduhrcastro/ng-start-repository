@@ -1,11 +1,10 @@
 (() => {
   angular.module('sample').controller('HomeCtrl', [
-    '$log',
+    'sample',
     function (
-      $log
+      sample
     ) {
       let vm = this
-
-      $log.log(vm)
+      vm.message = sample.hello()
     }])
 })()

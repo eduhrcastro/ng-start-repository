@@ -9,7 +9,10 @@
 }(this, function (exports, angular) {
 'use strict';
 
-angular.module('boilerplate', []).factory('sample', [function () {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = angular.module('boilerplate', []).factory('sample', [function () {
   return {
     hello: function hello() {
       return 'welcome to boilerplate';
@@ -17,5 +20,5 @@ angular.module('boilerplate', []).factory('sample', [function () {
   };
 }]);
 
-exports.boilerplate = boilerplate;
+exports.boilerplate = exports.default;
 }));

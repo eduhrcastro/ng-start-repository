@@ -25,7 +25,8 @@ gulp.task('vendorsJs', () => {
     'node_modules/angular-sanitize/angular-sanitize.min.js',
     'node_modules/angular-route/angular-route.min.js',
     'node_modules/angular-animate/angular-animate.min.js',
-    'node_modules/angular-messages/angular-messages.min.js'
+    'node_modules/angular-messages/angular-messages.min.js',
+    'node_modules/ng-start-repository/dist/boilerplate.min.js'
   ])
     .pipe(vendor('vendors.js'))
     .pipe(rename({ suffix: '.min' }))
@@ -106,5 +107,5 @@ gulp.task('watch', () => {
 })
 
 gulp.task('default', () => {
-  runSequence(['vendorsJs', 'vendorsCss'], ['sass', 'htmlToJs'], 'concat', 'minify', 'clean', ['watch'])
+  runSequence(['vendorsJs', 'vendorsCss'], ['sass', 'htmlToJs'], 'concat', 'minify', 'clean', 'watch')
 })

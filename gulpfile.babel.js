@@ -74,7 +74,7 @@ gulp.task('umd', () => {
         return projectName
       },
       exports: (file) => {
-        return projectName
+        return 'exports.default'
       },
       template: patterns.commonjsStrict.path
     }))

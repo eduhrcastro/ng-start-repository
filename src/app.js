@@ -1,4 +1,4 @@
-angular.module('boilerplate', []).factory('sample', [
+export default angular.module('boilerplate', []).factory('sample', [
   () => {
     return {
       hello: () => {
