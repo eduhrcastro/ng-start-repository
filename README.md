@@ -1,7 +1,6 @@
 # ng-start-repository
 
-[![Build Status](https://travis-ci.com/eduhrcastro/ng-start-repository.svg?branch=master)](https://travis-ci.com/eduhrcastro/ng-start-repository)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Build Status](https://travis-ci.com/eduhrcastro/ng-start-repository.svg?branch=master)](https://travis-ci.com/eduhrcastro/ng-start-repository) [![Coverage Status](https://coveralls.io/repos/github/eduhrcastro/ng-start-repository/badge.svg?branch=master)](https://coveralls.io/github/eduhrcastro/ng-start-repository?branch=master) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 ## Requirements
 
